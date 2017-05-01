@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Depot</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="<%= controller.controller_name %>">
+  <% @sape = Sape::Processor.from_request('fa0e22d3448c3aef1ca732d33af594e7', request) %>
+  <%= @sape.get_links(1) %>
+    <%= yield %>
+  </body>
+</html>
